@@ -61,12 +61,6 @@ void Lab1::Init()
         otherothermesh->LoadMesh(PATH_JOIN(window->props.selfDir, RESOURCE_PATH::MODELS, "primitives"), "sphere.obj");
         meshes[otherothermesh->GetMeshID()] = otherothermesh;
     }
-
-    {
-        Mesh* meshest = new Mesh("wall");
-        meshest->LoadMesh(PATH_JOIN(window->props.selfDir, RESOURCE_PATH::MODELS, "props"), "concrete_wall.obj");
-        meshes[meshest->GetMeshID()] = meshest;
-    }
 }
 
 
@@ -144,21 +138,18 @@ void Lab1::OnInputUpdate(float deltaTime, int mods)
     if (window->KeyHold(GLFW_KEY_D)) {
         move_x += 0.5 * deltaTime;
     }
-    if (window->KeyHold(GLFW_KEY_Q)) {
+    if (window->KeyHold(GLFW_KEY_E)) {
         move_y += -0.5 * deltaTime;
     }
-    if (window->KeyHold(GLFW_KEY_E)) {
+    if (window->KeyHold(GLFW_KEY_Q)) {
         move_y += 0.5 * deltaTime;
     }
     if (window->KeyHold(GLFW_KEY_K)) {
-        // oy matrix
         angle = 3 * deltaTime;
-
         glm::mat3 rm = glm::mat3
         (cos(angle), 0, sin(angle),
             0, 1, 0,
         -sin(angle), 1, cos(angle));
-
         rotation = glm::transpose(rm) * rotation;
     }
 

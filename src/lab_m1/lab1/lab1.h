@@ -28,11 +28,10 @@ namespace m1
         void OnWindowResize(int width, int height) override;
 
         // TODO(student): Class variables go here
-        float r, g, b;
-        std::string obj;
-        float x, y, z;
-        float move_x, move_y, move_z;
         glm::vec3 rotation;
-
+        std::string obj;
+        float move_x, move_y, move_z;
+        float r, g, b;
+        float x, y, z;
     };
 }   // namespace m1
